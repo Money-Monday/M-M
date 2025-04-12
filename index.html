@@ -92,9 +92,34 @@
             <input type="email" name="email" placeholder="Your Email Address" required>
             <input type="text" name="address" placeholder="Your Mailing Address" required>
             <input type="submit" value="Subscribe Now">                  
-            <h1 id = "hiddenMessage" style = "display: none">Thank You!</h1>
         </form>
     </div>
+    
+    <script>
+    // JavaScript to handle form submission and redirect
+    const form = document.getElementById('subscribe-form');
+    form.addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Submit the form data using Fetch API
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+        })
+            .then(response => {
+                if (response.ok) {
+                    // Redirect to Thank You page on success
+                    window.location.href = 'thank-you.html';
+                } else {
+                    alert('There was an error submitting your form. Please try again.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('There was an error submitting your form. Please try again.');
+            });
+    });
+</script>
 
 </main>
 
