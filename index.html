@@ -117,18 +117,14 @@
             <option value="Mail">Mail</option>
             <option value="Email">Email</option>
             </select>
-            <input type="submit" value="Subscribe Now">                  
+            <input type="submit" value="Subscribe Now">   
         </form>
-    </div>    
-
-    <div style="text-align:center;">
-<h1>Thank you!</h1>
+        <h1>Thank you!</h1>
 <p>Your submission has been received.</p>
 <p>This page will redirect in <span id="timer"></span>s.</p>
-</div>
 <script type="text/javascript">
 var count = 7; // The delay in seconds before redirecting.
-var redirect = "https://www.jotform.com"; // The redirection's landing page.
+var redirect = "thank-you.html"; // The redirection's landing page.
 function countDown() {
 if(count >= 0){
 document.getElementById("timer").innerHTML = count--;
@@ -137,8 +133,10 @@ setTimeout("countDown()", 1000);
 window.location.href = redirect;
 }
 }
-countDown();
+countDown();   
 </script>
+</div>
+
     
 
 </main>
